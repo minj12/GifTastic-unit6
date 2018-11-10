@@ -1,5 +1,5 @@
 //Setting Initial Array Values
-var gifys = ["Rick and Morty", "Bo Jack Horseman", "South Park", "The Simpsons", "Futurama", "Robot Chicken", "Brickleberry", "Drawn Together", "Aeon Flux", "Ren and Stimpy"];
+var gifys = ["Batman", "Marvel", "Prince of Bel Air", "Star-Wars", "Futurama", "Flash", "Teen Titans Go", "Development", "Dare-Devil", "Spongebob"];
 
 function displayGifInfo(gifName) {
 
@@ -7,7 +7,7 @@ function displayGifInfo(gifName) {
   var gify = $(this).attr("data-name");
   var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gify + "&api_key=ED5M7CisPjLAtbyt9UiIJpQdgioBnDSz&limit=10";
 
-  //AJAX uses
+  //AJAX uses "Get" to bring data from var queryURL
   $.ajax({
     url: queryURL,
     method: "GET"
@@ -19,13 +19,15 @@ function displayGifInfo(gifName) {
 
     //var assignments from html doc
     var gifyDiv = $("<div class='gify'>");
+    
     var results = response.data;
+
 
     //Clears out previous giphy set before adding a new set
     $("#gif-view").empty();
     for (var i = 0; i < gifys.length; i++) {
 
-      //Filtering for an appropriate rating (PG-13 and under)
+      //Filtering Guidance rateing//NO ADULT CONTENT 
       if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
 
         // Generating div with class "item"
@@ -69,7 +71,7 @@ function displayGifInfo(gifName) {
 //Calling renderButtons function
 function renderButtons() {
 
-  //Prevents repeated buttons -- Do not remove.
+  //Prevents repeated buttons
   $("#buttons-view").empty();
 
   //For Loop

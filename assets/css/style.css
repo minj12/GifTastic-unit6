@@ -1,0 +1,13 @@
+body {
+	background: url("../images/stars.jpg");
+	background-repeat: repeat;
+    background-size: 120%;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+}
+
+label, p {
+    color: goldenrod;
+}
