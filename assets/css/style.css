@@ -1,13 +1,16 @@
+/*Background Wallpaper*/
 body {
 	background: url("../images/stars.jpg");
 	background-repeat: repeat;
     background-size: 120%;
 }
 
+/*Title header*/
 h1 {
     color: rgb(255, 255, 255);
 }
 
+/*Other basic Website text*/
 label, p {
     color: goldenrod;
 }
